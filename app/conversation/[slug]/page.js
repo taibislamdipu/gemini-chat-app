@@ -1,10 +1,11 @@
 import LeftSidebar from "@/components/LeftSidebar";
 import PromptInput from "@/components/PromptInput";
 
-export default function ChatPage() {
+export default function ChatPage({ params }) {
+  const slug = params.slug;
+
   return (
     <div className="flex h-screen mx-auto bg-white max-h-screen">
-      {/* <!-- Left Sidebar --> */}
       <LeftSidebar />
 
       {/* <!-- Main Chat Area --> */}
@@ -21,7 +22,7 @@ export default function ChatPage() {
             <div className="relative">
               <button
                 className="p-2 hover:bg-gray-100 rounded-lg transition-colors group"
-                onclick="toggleDropdown()"
+                onClick="toggleDropdown()"
               >
                 <i
                   data-lucide="more-horizontal"
