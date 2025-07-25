@@ -1,62 +1,11 @@
-import CreateChat from "@/components/CreateChat";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import LeftSidebar from "@/components/LeftSidebar";
+import PromptInput from "@/components/PromptInput";
 
 export default function ChatPage() {
   return (
     <div className="flex h-screen mx-auto bg-white max-h-screen">
       {/* <!-- Left Sidebar --> */}
-      <div className="w-64 bg-gray-900 text-white flex flex-col">
-        <Header />
-
-        {/* <!-- Navigation Menu --> */}
-        <nav className="flex-1 p-4 space-y-2  overflow-y-auto">
-          <CreateChat />
-
-          {/* <!-- Conversations --> */}
-          <div className="pt-4 ">
-            <span className="text-gray-500 text-xs uppercase font-semibold mb-2">
-              Conversations
-            </span>
-            <div className="space-y-1 mt-3">
-              <a
-                href="#"
-                className="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer bg-gray-700 "
-              >
-                <span className="text-sm text-zinc-300">
-                  Learning NLP vs LLM
-                </span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer "
-              >
-                <span className="text-sm text-zinc-300">
-                  Microservice Data Orchestration
-                </span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer "
-              >
-                <span className="text-sm text-zinc-300">
-                  Deep Cloning Alternatives
-                </span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer "
-              >
-                <span className="text-sm text-zinc-300">
-                  AI Database Diagram Generation
-                </span>
-              </a>
-            </div>
-          </div>
-        </nav>
-
-        <Footer />
-      </div>
+      <LeftSidebar />
 
       {/* <!-- Main Chat Area --> */}
       <div className="flex-1 flex flex-col bg-white">
@@ -109,7 +58,7 @@ export default function ChatPage() {
             <div className="flex-1">
               <div className="bg-gray-100 rounded-2xl px-4 py-3 max-w-3xl">
                 <p className="text-gray-800">
-                  What's the difference between machine learning and artificial
+                  Whats the difference between machine learning and artificial
                   intelligence?
                 </p>
               </div>
@@ -125,12 +74,12 @@ export default function ChatPage() {
             <div className="flex-1">
               <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3 max-w-3xl">
                 <p className="text-gray-800 mb-3">
-                  Great question! Here's the key difference:
+                  Great question! Heres the key difference:
                 </p>
                 <p className="text-gray-800 mb-3">
                   <strong>Artificial Intelligence (AI)</strong> is the broader
                   concept of creating machines that can perform tasks that
-                  typically require human intelligence. It's like the umbrella
+                  typically require human intelligence. Its like the umbrella
                   term.
                 </p>
                 <p className="text-gray-800">
@@ -198,28 +147,7 @@ export default function ChatPage() {
           </div>
         </div>
 
-        {/* <!-- Input Area --> */}
-        <div className="p-6 border-t border-gray-200">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Ask me Anything"
-              className="w-full p-4 pr-20 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
-              <i data-lucide="sparkles" className="w-5 h-5 text-purple-500"></i>
-            </div>
-          </div>
-          <div className="flex items-center justify-end mt-3">
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-500">0/1000</span>
-              <button className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors cursor-pointer">
-                <span className="text-sm">Send</span>
-                <i data-lucide="arrow-right" className="w-4 h-4"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        <PromptInput />
       </div>
     </div>
   );
