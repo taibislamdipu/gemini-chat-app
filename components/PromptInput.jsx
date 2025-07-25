@@ -7,8 +7,27 @@ import { IoSparklesOutline } from "react-icons/io5";
 export default function PromptInput() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  function handleSubmit() {
-    setSearchTerm("");
+  async function handleSubmit() {
+    if (!searchTerm.trim()) return;
+
+    try {
+      const res = await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text: searchTerm,
+          conversationId: "64f03d4d5c2b5cf49f4c17a0", // ✅ Replace with dynamic ID
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed to send message");
+
+      const data = await res.json();
+      console.log("Message saved:", data);
+      setSearchTerm("");
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
