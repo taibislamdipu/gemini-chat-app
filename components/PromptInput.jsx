@@ -16,7 +16,7 @@ export default function PromptInput() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           text: searchTerm,
-          conversationId: "64f03d4d5c2b5cf49f4c17a0", // ✅ Replace with dynamic ID
+          conversationId: crypto.randomUUID(), // ✅ Replace with dynamic ID
         }),
       });
 
