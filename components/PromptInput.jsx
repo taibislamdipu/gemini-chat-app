@@ -8,7 +8,6 @@ export default function PromptInput() {
   const [searchTerm, setSearchTerm] = useState("");
 
   function handleSubmit() {
-    console.log(searchTerm);
     setSearchTerm("");
   }
 
